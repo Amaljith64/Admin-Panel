@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+{% block body %}
+
+<div class="main">
+    <!-- Sign up form -->
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form" style="margin-left: 202px; text-align: center;">
+                    <h2 class="form-title">Update</h2>
+                    <form action="" method="POST" class="register-form" id="register-form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="username" id="name" placeholder="Username"
+                                value="{{updatas.username}}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="firstname"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="first_name" id="firstname" placeholder="First Name"
+                                value="{{updatas.first_name}}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="last_name" id="lastname" placeholder="Last Name"
+                                value="{{updatas.last_name}}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi zmdi-email"></i></label>
+                            <input type="email" name="email" id="email" placeholder="Your Email"
+                                value="{{updatas.email}}" />
+                        </div>
+
+                        <div class="form-group form-button">
+                            <input type="submit" class="form-submit" value="Save" />
+                        </div>
+                    </form>
+                    <div>
+                        {% for message in messages %}
+                        <h4>{{message}}</h4>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+</div>
+</section>
+</div>
+
+{% endblock %}
